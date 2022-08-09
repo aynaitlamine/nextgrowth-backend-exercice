@@ -1,0 +1,36 @@
+{
+  "name": "nextgrowth-backend-exercice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "format-check": "npx prettier --ignore-path .gitignore \"./**/*.js\" --check",
+    "format-fix": "npx prettier --ignore-path .gitignore  \"./**/*.js\" --write",
+    "lint-check": "npx eslint --ignore-path .gitignore  \"./**/*.js\" . --quiet",
+    "lint-fix": "npx eslint --ignore-path .gitignore  \"./**/*.js\" . --fix",
+    "validate": "npm-run-all -s format-check lint-check",
+    "start-db": "sudo docker-compose up -d --force-recreate",
+    "stop-db": "sudo docker-compose down --rmi all --remove-orphans"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.1",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "mongoose": "^6.5.1"
+  }
+}
