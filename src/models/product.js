@@ -33,12 +33,10 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  variants: [
-    {
-      type: variantSchema,
-      required: true,
-    },
-  ],
+  variants: {
+    type: [variantSchema],
+    required: true,
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);
